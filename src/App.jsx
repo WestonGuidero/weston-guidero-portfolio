@@ -14,41 +14,36 @@ function App() {
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       */}
 
-      {/* Header */}
-      <header className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-        <div className="container">
-          <a className="navbar-brand fs-4 fw-bold text-dark" href="#">Weston Guidero</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link text-secondary me-3" href="#about">About</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-secondary me-3" href="#skills">Skills</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-secondary me-3" href="#projects">Projects</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-secondary" href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section id="hero" className="text-white py-5 py-md-5 text-center d-flex align-items-center justify-content-center flex-grow-1"
+      {/* Hero Section - Now includes integrated navigation */}
+      <section id="hero" className="text-white py-5 py-md-5 text-center d-flex align-items-center justify-content-center flex-grow-1 position-relative"
         style={{
           background: 'linear-gradient(45deg, #007bff, #6f42c1)', // Subtle gradient for pop
           minHeight: '70vh', // Make it a bit taller
           borderRadius: '0 0 50% 50% / 0 0 10% 10%', // Rounded bottom edge
           marginBottom: '5rem', // Add space below hero
-          boxShadow: '0 10px 20px rgba(0,0,0,0.2)' // Subtle shadow
+          boxShadow: '0 10px 20px rgba(0,0,0,0.2)', // Subtle shadow
+          paddingTop: '80px' // Add padding to push content down from the transparent header
         }}>
+        {/* Integrated Navigation Links */}
+        <nav className="position-absolute top-0 start-0 end-0 py-3" style={{ zIndex: 1000 }}>
+          <div className="container d-flex justify-content-end">
+            <ul className="list-unstyled d-flex mb-0">
+              <li className="nav-item me-4">
+                <a className="text-white text-decoration-none fw-semibold" href="#about">About</a>
+              </li>
+              <li className="nav-item me-4">
+                <a className="text-white text-decoration-none fw-semibold" href="#skills">Skills</a>
+              </li>
+              <li className="nav-item me-4">
+                <a className="text-white text-decoration-none fw-semibold" href="#projects">Projects</a>
+              </li>
+              <li className="nav-item">
+                <a className="text-white text-decoration-none fw-semibold" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
         <div className="container my-5">
           <h1 className="display-3 fw-bold mb-4 animate__animated animate__fadeInDown"> {/* Add animation class if you include Animate.css */}
             Hi, I'm Weston Guidero
@@ -319,20 +314,20 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-light rounded-circle shadow-sm p-3 d-flex align-items-center justify-content-center" /* Added Bootstrap classes for button-like appearance */
-                style={{ color: '#333', width: '56px', height: '56px' }} /* Set specific color and fixed size */
+                style={{ width: '56px', height: '56px' }} /* Fixed size */
               >
                 {/* GitHub Icon - Using imported SVG as an <img> tag */}
-                <img src={githubIcon} alt="GitHub" style={{ width: '32px', height: '32px' }} />
+                <img src={githubIcon} alt="GitHub" style={{ width: '32px', height: '32px', filter: 'brightness(0) invert(0)' }} /> {/* Added filter for black color */}
               </a>
               <a
                 href="https://linkedin.com/in/weston-guidero"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-light rounded-circle shadow-sm p-3 d-flex align-items-center justify-content-center" /* Added Bootstrap classes for button-like appearance */
-                style={{ color: '#0A66C2', width: '56px', height: '56px' }} /* Set specific color and fixed size */
+                style={{ width: '56px', height: '56px' }} /* Fixed size */
               >
                 {/* LinkedIn Icon - Using imported SVG as an <img> tag */}
-                <img src={linkedinIcon} alt="LinkedIn" style={{ width: '32px', height: '32px' }} />
+                <img src={linkedinIcon} alt="LinkedIn" style={{ width: '32px', height: '32px', filter: 'brightness(0) invert(0) sepia(100%) saturate(5000%) hue-rotate(190deg)' }} /> {/* Added filter for LinkedIn blue */}
               </a>
             </div>
           </div>
