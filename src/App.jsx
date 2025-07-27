@@ -314,20 +314,20 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-light rounded-circle shadow-sm p-3 d-flex align-items-center justify-content-center" /* Added Bootstrap classes for button-like appearance */
-                style={{ width: '56px', height: '56px' }} /* Fixed size */
+                style={{ color: '#333', width: '56px', height: '56px' }} /* Set specific color and fixed size */
               >
                 {/* GitHub Icon - Using imported SVG as an <img> tag */}
-                <img src={githubIcon} alt="GitHub" style={{ width: '32px', height: '32px', filter: 'brightness(0) invert(0)' }} /> {/* Added filter for black color */}
+                <img src={githubIcon} alt="GitHub" style={{ width: '32px', height: '32px' }} />
               </a>
               <a
                 href="https://linkedin.com/in/weston-guidero"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-light rounded-circle shadow-sm p-3 d-flex align-items-center justify-content-center" /* Added Bootstrap classes for button-like appearance */
-                style={{ width: '56px', height: '56px' }} /* Fixed size */
+                style={{ color: '#0A66C2', width: '56px', height: '56px' }} /* Set specific color and fixed size */
               >
                 {/* LinkedIn Icon - Using imported SVG as an <img> tag */}
-                <img src={linkedinIcon} alt="LinkedIn" style={{ width: '32px', height: '32px', filter: 'brightness(0) invert(0) sepia(100%) saturate(5000%) hue-rotate(190deg)' }} /> {/* Added filter for LinkedIn blue */}
+                <img src={linkedinIcon} alt="LinkedIn" style={{ width: '32px', height: '32px' }} />
               </a>
             </div>
           </div>
