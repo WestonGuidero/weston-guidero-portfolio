@@ -236,7 +236,7 @@ function App() {
                     <span className="badge bg-secondary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
                   </div>
                   <a
-                    href="#" // Replace with actual project link if available
+                    href="https://github.com/WestonGuidero/IMDB-Movie-Database-API-App" // Replace with actual project link if available
                     className="btn btn-link text-decoration-none fw-semibold"
                   >
                     Learn More &rarr;
@@ -281,7 +281,7 @@ function App() {
                     <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
                   </div>
                   <a
-                    href="#" // Replace with actual project link if available
+                    href="https://guiderodesign.com/projects" // Replace with actual project link if available
                     className="btn btn-link text-decoration-none fw-semibold"
                   >
                     Learn More &rarr;
