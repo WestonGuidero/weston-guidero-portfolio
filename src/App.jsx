@@ -199,28 +199,28 @@ function App() {
               </div>
             </div>
 
-            {/* Project Card 2: Vehicle Services App */}
+            {/* Example: Architecture Firm Website (React) */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
                 <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Vehicle Services App</h3>
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Architecture Firm Website</h3>
                   <p className="card-text text-secondary mb-4">
-                    An iOS platform for on-demand car logistics & relocation with GPS tracking, developed using Swift and SwiftUI.
+                    Designed and created an architecture firm website from scratch using React, JSX, JavaScript, and Bootstrap CSS.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-danger rounded-pill px-3 py-2 text-white">Swift</span>
-                    <span className="badge bg-purple rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>SwiftUI</span> {/* Custom color for indigo-like */}
-                    <span className="badge bg-warning rounded-pill px-3 py-2 text-white">Firebase</span> {/* Changed text-dark to text-white */}
+                    <span className="badge bg-cyan rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#17a2b8'}}>React</span> {/* Custom color for cyan-like */}
+                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
                   </div>
                   <a
-                    href="#" // Replace with actual project link if available
+                    href="https://guiderodesign.com" // Replace with actual project link if available
                     className="btn btn-link text-decoration-none fw-semibold"
                   >
-                    Learn More &rarr;
+                    View Project &rarr;
                   </a>
                 </div>
               </div>
             </div>
+
 
             {/* Project Card 3: IMDB Movie Database App */}
             <div className="col-md-6 col-lg-4">
@@ -239,7 +239,7 @@ function App() {
                     href="https://github.com/WestonGuidero/IMDB-Movie-Database-API-App" // Replace with actual project link if available
                     className="btn btn-link text-decoration-none fw-semibold"
                   >
-                    Learn More &rarr;
+                    View Project &rarr;
                   </a>
                 </div>
               </div>
@@ -262,29 +262,32 @@ function App() {
                     href="#" // Replace with actual project link if available
                     className="btn btn-link text-decoration-none fw-semibold"
                   >
-                    Learn More &rarr;
+                    View Project &rarr;
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Example: Architecture Firm Website (React) */}
+
+
+                        {/* Project Card 5: Vehicle Services App */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
                 <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Architecture Firm Website</h3>
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Vehicle Services App</h3>
                   <p className="card-text text-secondary mb-4">
-                    Designed and created an architecture firm website from scratch using React, JSX, JavaScript, and Bootstrap CSS.
+                    An iOS platform for on-demand car logistics & relocation with GPS tracking, developed using Swift and SwiftUI.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-cyan rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#17a2b8'}}>React</span> {/* Custom color for cyan-like */}
-                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
+                    <span className="badge bg-danger rounded-pill px-3 py-2 text-white">Swift</span>
+                    <span className="badge bg-purple rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>SwiftUI</span> {/* Custom color for indigo-like */}
+                    <span className="badge bg-warning rounded-pill px-3 py-2 text-white">Firebase</span> {/* Changed text-dark to text-white */}
                   </div>
                   <a
-                    href="https://guiderodesign.com/projects" // Replace with actual project link if available
+                    href="#" // Replace with actual project link if available
                     className="btn btn-link text-decoration-none fw-semibold"
                   >
-                    Learn More &rarr;
+                    View Project &rarr;
                   </a>
                 </div>
               </div>
