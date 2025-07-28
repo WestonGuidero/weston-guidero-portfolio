@@ -188,7 +188,7 @@ function App() {
                     <span className="badge bg-info rounded-pill px-3 py-2 text-white">Supabase</span>
                   </div>
                   <a
-                    href="https://ai-chatbot-westonguideros-projects.vercel.app"
+                    href="https://ai-chatbot-alpha-orcin.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-link text-decoration-none fw-semibold"
