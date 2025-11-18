@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import profileImage from './assets/images/photo_of_me.jpg';
 import githubIcon from './assets/images/github.svg'; // Import the GitHub SVG
 import linkedinIcon from './assets/images/linkedin.svg'; // Import the LinkedIn SVG
@@ -6,6 +6,15 @@ import linkedinIcon from './assets/images/linkedin.svg'; // Import the LinkedIn 
 
 // Main App component
 function App() {
+  const [showModal, setShowModal] = useState(false);
+  const [formStatus, setFormStatus] = useState('');
+
+  const openModal = () => setShowModal(true);
+  const closeModal = () => {
+    setShowModal(false);
+    setFormStatus('');
+  };
+
   return (
     <div className="bg-light min-vh-100 d-flex flex-column" style={{ fontFamily: 'Inter, sans-serif' }}>
       {/* Bootstrap CDN links - These MUST be placed in your project's root index.html file */}
@@ -305,12 +314,12 @@ function App() {
             I'm always open to new opportunities and collaborations. Feel free to reach out!
           </p>
           <div className="d-flex flex-column align-items-center mb-4">
-            <a
-              href="mailto:wguidero@gmail.com"
+            <button
+              onClick={openModal}
               className="btn btn-primary btn-lg rounded-pill shadow-lg px-5 py-3 fw-bold text-white mb-3"
             >
               Email Me
-            </a>
+            </button>
             <div className="d-flex justify-content-center gap-4 mt-3">
               <a
                 href="https://github.com/WestonGuidero"
@@ -336,6 +345,128 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Contact Form Modal */}
+      {showModal && (
+        <>
+          {/* Backdrop with blur effect */}
+          <div
+            onClick={closeModal}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backdropFilter: 'blur(8px)',
+              zIndex: 1040,
+            }}
+          />
+
+          {/* Modal */}
+          <div
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 1050,
+              width: '90%',
+              maxWidth: '600px',
+            }}
+          >
+            <div className="bg-white rounded-4 shadow-lg p-4 p-md-5">
+              <div className="d-flex justify-content-between align-items-center mb-4">
+                <h2 className="fw-bold text-dark mb-0">Get In Touch</h2>
+                <button
+                  onClick={closeModal}
+                  className="btn-close"
+                  aria-label="Close"
+                />
+              </div>
+
+              <form
+                action="https://formspree.io/f/manvyede"
+                method="POST"
+                onSubmit={() => setFormStatus('sending')}
+              >
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label fw-semibold">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control form-control-lg"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Your name"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label fw-semibold">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control form-control-lg"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="subject" className="form-label fw-semibold">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control form-control-lg"
+                    id="subject"
+                    name="subject"
+                    required
+                    placeholder="What's this about?"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="message" className="form-label fw-semibold">
+                    Message
+                  </label>
+                  <textarea
+                    className="form-control form-control-lg"
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Your message here..."
+                  />
+                </div>
+
+                {formStatus === 'sending' && (
+                  <div className="alert alert-info mb-3">
+                    Sending your message...
+                  </div>
+                )}
+
+                <div className="d-grid gap-2">
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-lg fw-bold"
+                    disabled={formStatus === 'sending'}
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Footer */}
       <footer className="bg-dark text-white py-4 text-center">
