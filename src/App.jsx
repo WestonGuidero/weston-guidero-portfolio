@@ -47,7 +47,7 @@ function App() {
                 <a className="text-white text-decoration-none fw-semibold" href="#projects">Projects</a>
               </li>
               <li className="nav-item">
-                <a className="text-white text-decoration-none fw-semibold" href="#contact">Contact</a>
+                <button onClick={openModal} className="text-white text-decoration-none fw-semibold bg-transparent border-0" style={{ cursor: 'pointer' }}>Contact</button>
               </li>
             </ul>
           </div>
