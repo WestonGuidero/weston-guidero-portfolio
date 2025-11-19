@@ -183,7 +183,34 @@ function App() {
         <div className="container my-5">
           <h2 className="display-4 fw-bold text-center text-dark mb-5">My Projects</h2>
           <div className="row g-4">
-            {/* Project Card 1: AI Chatbot */}
+            {/* Project Card 1: Electronics Modding & Repair E-Commerce */}
+            <div className="col-md-6 col-lg-4">
+              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+                <div className="card-body p-4">
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Electronics Modding & Repair E-Commerce (My Business)</h3>
+                  <p className="card-text text-secondary mb-4">
+                    My own e-commerce website for my electronics modding and repair business. I first started with video game consoles and cell phone repairs at age 15. I do everything from micro-soldering to flashing firmware and LCD replacements.
+                    This is a full-stack application built on Next.js, deployed on Vercel. I integrated APIs to manage aspects of the business: Stripe for payment and subscription handling, Supabase for backend and data management, and Resend for automated email API order fulfillment and marketing.
+                  </p>
+                  <div className="d-flex flex-wrap gap-2 mb-4">
+                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Next.js</span>
+                    <span className="badge bg-purple rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>Stripe</span>
+                    <span className="badge bg-success rounded-pill px-3 py-2 text-white">Supabase</span>
+                    <span className="badge bg-info rounded-pill px-3 py-2 text-white">Resend</span>
+                  </div>
+                  <a
+                    href="https://techwes.store/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-link text-decoration-none fw-semibold"
+                  >
+                    View Project &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Card 2: AI Chatbot */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
                 <div className="card-body p-4">
@@ -208,7 +235,7 @@ function App() {
               </div>
             </div>
 
-            {/* Example: Architecture Firm Website (React) */}
+            {/* Project Card 3: Architecture Firm Website (React) */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
                 <div className="card-body p-4">
@@ -221,7 +248,9 @@ function App() {
                     <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
                   </div>
                   <a
-                    href="https://guiderodesign.com" // Replace with actual project link if available
+                    href="https://guiderodesign.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-link text-decoration-none fw-semibold"
                   >
                     View Project &rarr;
@@ -230,8 +259,7 @@ function App() {
               </div>
             </div>
 
-
-            {/* Project Card 3: IMDB Movie Database App */}
+            {/* Project Card 4: IMDB Movie Database App */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
                 <div className="card-body p-4">
@@ -245,7 +273,9 @@ function App() {
                     <span className="badge bg-secondary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
                   </div>
                   <a
-                    href="https://github.com/WestonGuidero/IMDB-Movie-Database-API-App" // Replace with actual project link if available
+                    href="https://github.com/WestonGuidero/IMDB-Movie-Database-API-App"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-link text-decoration-none fw-semibold"
                   >
                     View Project &rarr;
@@ -267,12 +297,6 @@ function App() {
                     <span className="badge bg-orange rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#fd7e14'}}>WordPress</span> {/* Custom color for orange-like */}
                     <span className="badge bg-indigo rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6610f2'}}>HTML/CSS</span> {/* Custom color for indigo-like */}
                   </div>
-                  <a
-                    href="#" // Replace with actual project link if available
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
                 </div>
               </div>
             </div>
@@ -292,12 +316,6 @@ function App() {
                     <span className="badge bg-purple rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>SwiftUI</span> {/* Custom color for indigo-like */}
                     <span className="badge bg-warning rounded-pill px-3 py-2 text-white">Firebase</span> {/* Changed text-dark to text-white */}
                   </div>
-                  <a
-                    href="#" // Replace with actual project link if available
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
                 </div>
               </div>
             </div>
