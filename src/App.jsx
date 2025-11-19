@@ -210,7 +210,31 @@ function App() {
               </div>
             </div>
 
-            {/* Project Card 2: AI Chatbot */}
+            {/* Project Card 2: Architecture Firm Website (React) */}
+            <div className="col-md-6 col-lg-4">
+              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+                <div className="card-body p-4">
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Architecture Firm Website</h3>
+                  <p className="card-text text-secondary mb-4">
+                    Designed and created an architecture firm website from scratch using React, JSX, JavaScript, and Bootstrap CSS.
+                  </p>
+                  <div className="d-flex flex-wrap gap-2 mb-4">
+                    <span className="badge bg-cyan rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#17a2b8'}}>React</span> {/* Custom color for cyan-like */}
+                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
+                  </div>
+                  <a
+                    href="https://guiderodesign.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-link text-decoration-none fw-semibold"
+                  >
+                    View Project &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Card 3: AI Chatbot */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
                 <div className="card-body p-4">
@@ -225,30 +249,6 @@ function App() {
                   </div>
                   <a
                     href="https://ai-chatbot-alpha-orcin.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card 3: Architecture Firm Website (React) */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Architecture Firm Website</h3>
-                  <p className="card-text text-secondary mb-4">
-                    Designed and created an architecture firm website from scratch using React, JSX, JavaScript, and Bootstrap CSS.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-cyan rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#17a2b8'}}>React</span> {/* Custom color for cyan-like */}
-                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
-                  </div>
-                  <a
-                    href="https://guiderodesign.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-link text-decoration-none fw-semibold"
@@ -284,18 +284,37 @@ function App() {
               </div>
             </div>
 
-            {/* Add more project cards here based on your GitHub and resume */}
-            {/* Example: WordPress/HTML/CSS Portfolio Websites */}
+            {/* Client Portfolio Websites - NAFS & Freelance */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
                 <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Client Portfolio Websites</h3>
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">National Family Services & Client Websites</h3>
                   <p className="card-text text-secondary mb-4">
-                    Developed responsive portfolio websites for 5+ architectural and retail clients using WordPress, HTML, and CSS.
+                    Rebuilt payment processing system using custom PHP/WordPress, restoring functionality within 72 hours and preventing $50K+ monthly revenue loss. Developed responsive portfolio websites for 5+ clients, increasing lead conversion by 40%. Architected staging environments with automated deployment workflows.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-orange rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#fd7e14'}}>WordPress</span> {/* Custom color for orange-like */}
-                    <span className="badge bg-indigo rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6610f2'}}>HTML/CSS</span> {/* Custom color for indigo-like */}
+                    <span className="badge bg-orange rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#fd7e14'}}>WordPress</span>
+                    <span className="badge bg-danger rounded-pill px-3 py-2 text-white">PHP</span>
+                    <span className="badge bg-indigo rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6610f2'}}>HTML/CSS</span>
+                  </div>
+                  <div className="d-flex gap-2">
+                    <a
+                      href="https://www.nafsbenefits.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-link text-decoration-none fw-semibold p-0"
+                    >
+                      NAFS Benefits &rarr;
+                    </a>
+                    <span className="text-secondary">|</span>
+                    <a
+                      href="https://nationalfamilyservices.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-link text-decoration-none fw-semibold p-0"
+                    >
+                      National Family Services &rarr;
+                    </a>
                   </div>
                 </div>
               </div>
