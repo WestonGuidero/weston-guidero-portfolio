@@ -209,6 +209,32 @@ function App() {
                 </div>
               </div>
             </div>
+            
+            {/* Project Card: West Coast Systems */}
+            <div className="col-md-6 col-lg-4">
+              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+                <div className="card-body p-4">
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West Coast Systems (My Business)</h3>
+                  <p className="card-text text-secondary mb-4">
+                    My own low-voltage, IT, and AV services company. I built the business website from the ground up, handling everything from structured cabling and network infrastructure to audio/visual installs and smart-home systems. The site is backed by a professional mail server for branded business communications and Zoho CRM to manage leads, client follow-ups, and service pipelines.
+                  </p>
+                  <div className="d-flex flex-wrap gap-2 mb-4">
+                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e65c00'}}>Low Voltage / AV</span>
+                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#1a73e8'}}>Mail Server</span>
+                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e42527'}}>Zoho CRM</span>
+                    <span className="badge bg-secondary rounded-pill px-3 py-2 text-white">IT Services</span>
+                  </div>
+                  <a
+                    href="https://westcoastsystems.tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-link text-decoration-none fw-semibold"
+                  >
+                    View Project &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
 
             {/* Project Card 2: Architecture Firm Website (React) */}
             <div className="col-md-6 col-lg-4">
@@ -322,31 +348,6 @@ function App() {
 
 
 
-            {/* Project Card: West Coast Systems */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West Coast Systems (My Business)</h3>
-                  <p className="card-text text-secondary mb-4">
-                    My own low-voltage, IT, and AV services company. I built the business website from the ground up, handling everything from structured cabling and network infrastructure to audio/visual installs and smart-home systems. The site is backed by a professional mail server for branded business communications and Zoho CRM to manage leads, client follow-ups, and service pipelines.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e65c00'}}>Low Voltage / AV</span>
-                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#1a73e8'}}>Mail Server</span>
-                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e42527'}}>Zoho CRM</span>
-                    <span className="badge bg-secondary rounded-pill px-3 py-2 text-white">IT Services</span>
-                  </div>
-                  <a
-                    href="https://westcoastsystems.tech"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
 
                         {/* Project Card 5: Vehicle Services App */}
             {/* <div className="col-md-6 col-lg-4">
