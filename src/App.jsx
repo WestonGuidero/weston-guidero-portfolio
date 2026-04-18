@@ -349,7 +349,7 @@ function App() {
             </div>
 
                         {/* Project Card 5: Vehicle Services App */}
-            <div className="col-md-6 col-lg-4">
+            {/* <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Vehicle Services App</h3>
@@ -358,12 +358,12 @@ function App() {
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
                     <span className="badge bg-danger rounded-pill px-3 py-2 text-white">Swift</span>
-                    <span className="badge bg-purple rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>SwiftUI</span> {/* Custom color for indigo-like */}
-                    <span className="badge bg-warning rounded-pill px-3 py-2 text-white">Firebase</span> {/* Changed text-dark to text-white */}
+                    <span className="badge bg-purple rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>SwiftUI</span>
+                    <span className="badge bg-warning rounded-pill px-3 py-2 text-white">Firebase</span>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>
