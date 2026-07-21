@@ -195,7 +195,7 @@ function App() {
                   <img src={westAudioPreview} alt="West-Audio.com homepage preview" />
                 </div>
                 <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West-Audio.com (My Business)</h3>
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West-Audio.com</h3>
                   <p className="card-text text-secondary mb-4">
                     My own software and audio plugin company. Home to AudioFork, a fully released platform built to be the GitHub/Git of the audio and DAW world &mdash; giving music producers, engineers, composers, and hobbyists version control and project history for their DAW sessions. Available as both a one-time purchase and a SaaS subscription for cloud backup.
                   </p>
@@ -224,7 +224,7 @@ function App() {
                   <img src={techwesPreview} alt="TechWes Store homepage preview" />
                 </div>
                 <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Electronics Modding & Repair E-Commerce (My Business)</h3>
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Electronics Modding & Repair E-Commerce</h3>
                   <p className="card-text text-secondary mb-4">
                     My own e-commerce site for my electronics modding and repair business, started at age 15 doing console mods and phone repairs &mdash; everything from micro-soldering to firmware flashing and LCD replacements. Built full-stack on Next.js and deployed on Vercel, with Stripe for payments, Supabase for the backend, and Resend for automated order and marketing emails.
                   </p>
@@ -253,7 +253,7 @@ function App() {
                   <img src={westCoastPreview} alt="West Coast Systems homepage preview" />
                 </div>
                 <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West Coast Systems (My Business)</h3>
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West Coast Systems</h3>
                   <p className="card-text text-secondary mb-4">
                     My own low-voltage, IT, and AV services company. I built the business site from the ground up &mdash; structured cabling, network infrastructure, AV installs, and smart-home systems &mdash; backed by a branded mail server and Zoho CRM for lead and pipeline management.
                   </p>
