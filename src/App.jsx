@@ -6,7 +6,7 @@ import westAudioPreview from './assets/images/previews/west-audio.jpg';
 import techwesPreview from './assets/images/previews/techwes-store.jpg';
 import westCoastPreview from './assets/images/previews/westcoastsystems.jpg';
 import guideroDesignPreview from './assets/images/previews/guiderodesign.jpg';
-import nafsPreview from './assets/images/previews/nafsbenefits.jpg';
+import nafsPreview from './assets/images/previews/nationalfamilyservices.jpg';
 
 
 // Main App component
@@ -197,7 +197,7 @@ function App() {
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West-Audio.com</h3>
                   <p className="card-text text-secondary mb-4">
-                    My own software and audio plugin company. Home to AudioFork, a fully released platform built to be the GitHub/Git of the audio and DAW world &mdash; giving music producers, engineers, composers, and hobbyists version control and project history for their DAW sessions. Available as both a one-time purchase and a SaaS subscription for cloud backup.
+                    West Audio is an independent software and audio plugin company building tools for music producers, engineers, composers, and hobbyists. Its flagship product, AudioFork, is a fully released version-control platform for DAW projects &mdash; the GitHub/Git of the audio world &mdash; available as a one-time purchase with an optional SaaS subscription for cloud backup. I designed and built the site and manage the product's release and licensing.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
                     <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>AudioFork</span>
@@ -226,7 +226,7 @@ function App() {
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Electronics Modding & Repair E-Commerce</h3>
                   <p className="card-text text-secondary mb-4">
-                    My own e-commerce site for my electronics modding and repair business, started at age 15 doing console mods and phone repairs &mdash; everything from micro-soldering to firmware flashing and LCD replacements. Built full-stack on Next.js and deployed on Vercel, with Stripe for payments, Supabase for the backend, and Resend for automated order and marketing emails.
+                    TechWes Store offers professional console modding and repair services &mdash; micro-soldering, firmware flashing, LCD replacements &mdash; building on repair work I started doing at age 15. I built the full-stack e-commerce site on Next.js and deployed it through Vercel's GitHub-connected CI/CD pipeline, integrating Stripe's token-authenticated payment API for checkout and subscriptions, Supabase for the backend database, and the Resend API for automated order and marketing emails.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
                     <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Next.js</span>
@@ -255,7 +255,7 @@ function App() {
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West Coast Systems</h3>
                   <p className="card-text text-secondary mb-4">
-                    My own low-voltage, IT, and AV services company. I built the business site from the ground up &mdash; structured cabling, network infrastructure, AV installs, and smart-home systems &mdash; backed by a branded mail server and Zoho CRM for lead and pipeline management.
+                    West Coast Systems provides low-voltage, IT, and AV services &mdash; structured cabling, network infrastructure, AV installs, and smart-home systems. I built the business website from the ground up and backed it with a branded mail server and a Zoho CRM integration for lead and pipeline management.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
                     <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e65c00'}}>Low Voltage / AV</span>
@@ -368,7 +368,7 @@ function App() {
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 hover-lift">
                 <div className="site-preview">
-                  <img src={nafsPreview} alt="National Association of Family Services homepage preview" />
+                  <img src={nafsPreview} alt="National Family Services homepage preview" />
                 </div>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">National Family Services & Client Websites</h3>
