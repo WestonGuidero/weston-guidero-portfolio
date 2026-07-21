@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import profileImage from './assets/images/photo_of_me.jpg';
 import githubIcon from './assets/images/github.svg'; // Import the GitHub SVG
 import linkedinIcon from './assets/images/linkedin.svg'; // Import the LinkedIn SVG
+import westAudioPreview from './assets/images/previews/west-audio.jpg';
+import techwesPreview from './assets/images/previews/techwes-store.jpg';
+import westCoastPreview from './assets/images/previews/westcoastsystems.jpg';
+import guideroDesignPreview from './assets/images/previews/guiderodesign.jpg';
+import nafsPreview from './assets/images/previews/nafsbenefits.jpg';
 
 
 // Main App component
@@ -183,14 +188,45 @@ function App() {
         <div className="container my-5">
           <h2 className="display-4 fw-bold text-center text-dark mb-5">My Projects</h2>
           <div className="row g-4">
+            {/* Project Card: West-Audio.com */}
+            <div className="col-md-6 col-lg-4">
+              <div className="card h-100 shadow-lg rounded-3 hover-lift">
+                <div className="site-preview">
+                  <img src={westAudioPreview} alt="West-Audio.com homepage preview" />
+                </div>
+                <div className="card-body p-4">
+                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West-Audio.com (My Business)</h3>
+                  <p className="card-text text-secondary mb-4">
+                    My own software and audio plugin company. Home to AudioFork, a fully released platform built to be the GitHub/Git of the audio and DAW world &mdash; giving music producers, engineers, composers, and hobbyists version control and project history for their DAW sessions. Available as both a one-time purchase and a SaaS subscription for cloud backup.
+                  </p>
+                  <div className="d-flex flex-wrap gap-2 mb-4">
+                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>AudioFork</span>
+                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">SaaS</span>
+                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#20c997'}}>One-Time Purchase</span>
+                    <span className="badge bg-secondary rounded-pill px-3 py-2 text-white">Audio / DAW Tools</span>
+                  </div>
+                  <a
+                    href="https://west-audio.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-link text-decoration-none fw-semibold"
+                  >
+                    View Project &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Project Card 1: Electronics Modding & Repair E-Commerce */}
             <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+              <div className="card h-100 shadow-lg rounded-3 hover-lift">
+                <div className="site-preview">
+                  <img src={techwesPreview} alt="TechWes Store homepage preview" />
+                </div>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Electronics Modding & Repair E-Commerce (My Business)</h3>
                   <p className="card-text text-secondary mb-4">
-                    My own e-commerce website for my electronics modding and repair business. I first started with video game consoles and cell phone repairs at age 15. I do everything from micro-soldering to flashing firmware and LCD replacements.
-                    This is a full-stack application built on Next.js, deployed on Vercel. I integrated APIs to manage aspects of the business: Stripe for payment and subscription handling, Supabase for backend and data management, and Resend for automated email API order fulfillment and marketing.
+                    My own e-commerce site for my electronics modding and repair business, started at age 15 doing console mods and phone repairs &mdash; everything from micro-soldering to firmware flashing and LCD replacements. Built full-stack on Next.js and deployed on Vercel, with Stripe for payments, Supabase for the backend, and Resend for automated order and marketing emails.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
                     <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Next.js</span>
@@ -209,14 +245,17 @@ function App() {
                 </div>
               </div>
             </div>
-            
+
             {/* Project Card: West Coast Systems */}
             <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+              <div className="card h-100 shadow-lg rounded-3 hover-lift">
+                <div className="site-preview">
+                  <img src={westCoastPreview} alt="West Coast Systems homepage preview" />
+                </div>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West Coast Systems (My Business)</h3>
                   <p className="card-text text-secondary mb-4">
-                    My own low-voltage, IT, and AV services company. I built the business website from the ground up, handling everything from structured cabling and network infrastructure to audio/visual installs and smart-home systems. The site is backed by a professional mail server for branded business communications and Zoho CRM to manage leads, client follow-ups, and service pipelines.
+                    My own low-voltage, IT, and AV services company. I built the business site from the ground up &mdash; structured cabling, network infrastructure, AV installs, and smart-home systems &mdash; backed by a branded mail server and Zoho CRM for lead and pipeline management.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
                     <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e65c00'}}>Low Voltage / AV</span>
@@ -238,7 +277,10 @@ function App() {
 
             {/* Project Card 2: Architecture Firm Website (React) */}
             <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+              <div className="card h-100 shadow-lg rounded-3 hover-lift">
+                <div className="site-preview">
+                  <img src={guideroDesignPreview} alt="Guidero Design homepage preview" />
+                </div>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Architecture Firm Website</h3>
                   <p className="card-text text-secondary mb-4">
@@ -263,18 +305,24 @@ function App() {
             {/* Project Card 3: AI Chatbot */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+                <div
+                  className="site-preview-placeholder text-white"
+                  style={{ background: 'linear-gradient(135deg, #1a1a1a, #343a40)' }}
+                >
+                  🤖
+                </div>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">AI Chatbot</h3>
                   <p className="card-text text-secondary mb-4">
-                    An AI Chatbot built with Next.js, XAI API, and Supabase (Postgres) for real-time communication.
+                    A self-hosted AI chatbot powered by Ollama for local, private large language model inference, with a custom web front end for real-time conversation.
                   </p>
                   <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Next.js</span>
-                    <span className="badge bg-success rounded-pill px-3 py-2 text-white">XAI API</span>
-                    <span className="badge bg-info rounded-pill px-3 py-2 text-white">Supabase</span>
+                    <span className="badge bg-dark rounded-pill px-3 py-2 text-white">Ollama</span>
+                    <span className="badge bg-success rounded-pill px-3 py-2 text-white">Self-Hosted</span>
+                    <span className="badge bg-info rounded-pill px-3 py-2 text-white">LLM</span>
                   </div>
                   <a
-                    href="https://ai-chatbot-alpha-orcin.vercel.app/"
+                    href="https://wesollama.duckdns.org/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-link text-decoration-none fw-semibold"
@@ -288,6 +336,12 @@ function App() {
             {/* Project Card 4: IMDB Movie Database App */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+                <div
+                  className="site-preview-placeholder text-white"
+                  style={{ background: 'linear-gradient(135deg, #e83e8c, #20c997)' }}
+                >
+                  🎬
+                </div>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">IMDB Movie Database App</h3>
                   <p className="card-text text-secondary mb-4">
@@ -312,7 +366,10 @@ function App() {
 
             {/* Client Portfolio Websites - NAFS & Freelance */}
             <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
+              <div className="card h-100 shadow-lg rounded-3 hover-lift">
+                <div className="site-preview">
+                  <img src={nafsPreview} alt="National Association of Family Services homepage preview" />
+                </div>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">National Family Services & Client Websites</h3>
                   <p className="card-text text-secondary mb-4">
