@@ -191,9 +191,9 @@ function App() {
             {/* Project Card: West-Audio.com */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <div className="site-preview">
+                <a href="https://west-audio.com" target="_blank" rel="noopener noreferrer" className="site-preview">
                   <img src={westAudioPreview} alt="West-Audio.com homepage preview" />
-                </div>
+                </a>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West-Audio.com</h3>
                   <p className="card-text text-secondary mb-4">
@@ -220,9 +220,9 @@ function App() {
             {/* Project Card 1: Electronics Modding & Repair E-Commerce */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <div className="site-preview">
+                <a href="https://techwes.store/" target="_blank" rel="noopener noreferrer" className="site-preview">
                   <img src={techwesPreview} alt="TechWes Store homepage preview" />
-                </div>
+                </a>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Electronics Modding & Repair E-Commerce</h3>
                   <p className="card-text text-secondary mb-4">
@@ -249,9 +249,9 @@ function App() {
             {/* Project Card: West Coast Systems */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <div className="site-preview">
+                <a href="https://westcoastsystems.tech" target="_blank" rel="noopener noreferrer" className="site-preview">
                   <img src={westCoastPreview} alt="West Coast Systems homepage preview" />
-                </div>
+                </a>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West Coast Systems</h3>
                   <p className="card-text text-secondary mb-4">
@@ -278,9 +278,9 @@ function App() {
             {/* Project Card 2: Architecture Firm Website (React) */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <div className="site-preview">
+                <a href="https://guiderodesign.com" target="_blank" rel="noopener noreferrer" className="site-preview">
                   <img src={guideroDesignPreview} alt="Guidero Design homepage preview" />
-                </div>
+                </a>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Architecture Firm Website</h3>
                   <p className="card-text text-secondary mb-4">
@@ -305,12 +305,15 @@ function App() {
             {/* Project Card 3: AI Chatbot */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
-                <div
+                <a
+                  href="https://wesollama.duckdns.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="site-preview-placeholder text-white"
                   style={{ background: 'linear-gradient(135deg, #1a1a1a, #343a40)' }}
                 >
                   🤖
-                </div>
+                </a>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">AI Chatbot</h3>
                   <p className="card-text text-secondary mb-4">
@@ -336,12 +339,15 @@ function App() {
             {/* Project Card 4: IMDB Movie Database App */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
-                <div
+                <a
+                  href="https://github.com/WestonGuidero/IMDB-Movie-Database-API-App"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="site-preview-placeholder text-white"
                   style={{ background: 'linear-gradient(135deg, #e83e8c, #20c997)' }}
                 >
                   🎬
-                </div>
+                </a>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">IMDB Movie Database App</h3>
                   <p className="card-text text-secondary mb-4">
@@ -367,9 +373,9 @@ function App() {
             {/* Client Portfolio Websites - NAFS & Freelance */}
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <div className="site-preview">
+                <a href="https://nationalfamilyservices.com/" target="_blank" rel="noopener noreferrer" className="site-preview">
                   <img src={nafsPreview} alt="National Family Services homepage preview" />
-                </div>
+                </a>
                 <div className="card-body p-4">
                   <h3 className="card-title fs-3 fw-semibold text-dark mb-3">National Family Services & Client Websites</h3>
                   <p className="card-text text-secondary mb-4">
