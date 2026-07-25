@@ -13,8 +13,8 @@ const skillGroups = [
   {
     title: 'IT & Networking',
     skills: [
-      'Enterprise Networking', 'Structured Cabling', 'Network Infrastructure',
-      'Low-Voltage / AV Systems', 'Linux Administration', 'Windows Administration',
+      'Enterprise Networking', 'Network Infrastructure', 'AV/IT Systems Integration',
+      'Linux Administration', 'Windows Administration',
       'Mail Server Administration', 'Zoho CRM', 'Cybersecurity (WGU, in progress)',
     ],
   },
@@ -40,6 +40,25 @@ const skillGroups = [
 ];
 
 const projects = [
+  {
+    title: 'National Family Services & Client Websites',
+    preview: { type: 'image', src: nafsPreview, alt: 'National Family Services homepage preview' },
+    description:
+      'Rebuilt a payment processing system on custom PHP/WordPress, restoring functionality in 72 hours and preventing $50K+ in monthly revenue loss. Built responsive portfolio sites for 5+ clients, lifting lead conversion by 40%, with staged, automated deployment workflows.',
+    tags: ['WordPress', 'PHP', 'HTML/CSS'],
+    links: [
+      { href: 'https://www.nafsbenefits.com/', label: 'NAFS Benefits' },
+      { href: 'https://nationalfamilyservices.com/', label: 'National Family Services' },
+    ],
+  },
+  {
+    title: 'Architecture Firm Website',
+    preview: { type: 'image', src: guideroDesignPreview, alt: 'Guidero Design homepage preview' },
+    description:
+      'Designed and built an architecture firm website from scratch using React, JSX, and Bootstrap CSS.',
+    tags: ['React', 'Bootstrap CSS'],
+    link: { href: 'https://guiderodesign.com', label: 'View Project' },
+  },
   {
     title: 'West-Audio.com',
     spotlight: true,
@@ -68,39 +87,12 @@ const projects = [
     link: { href: 'https://westcoastsystems.tech', label: 'View Project' },
   },
   {
-    title: 'Architecture Firm Website',
-    preview: { type: 'image', src: guideroDesignPreview, alt: 'Guidero Design homepage preview' },
-    description:
-      'Designed and built an architecture firm website from scratch using React, JSX, and Bootstrap CSS.',
-    tags: ['React', 'Bootstrap CSS'],
-    link: { href: 'https://guiderodesign.com', label: 'View Project' },
-  },
-  {
     title: 'AI Chatbot',
     preview: { type: 'emoji', emoji: '🤖', gradient: 'linear-gradient(135deg, #1a1a1a, #343a40)' },
     description:
       'A self-hosted AI chatbot powered by Ollama for local, private large language model inference, with a custom web front end for real-time conversation.',
     tags: ['Ollama', 'Self-Hosted', 'LLM'],
     link: { href: 'https://wesollama.duckdns.org/', label: 'View Project' },
-  },
-  {
-    title: 'IMDB Movie Database App',
-    preview: { type: 'emoji', emoji: '🎬', gradient: 'linear-gradient(135deg, #e83e8c, #20c997)' },
-    description:
-      'A movie database app with REST API integration, full CRUD operations, and Bootstrap CSS styling.',
-    tags: ['REST API', 'CRUD', 'Bootstrap CSS'],
-    link: { href: 'https://github.com/WestonGuidero/IMDB-Movie-Database-API-App', label: 'View Project' },
-  },
-  {
-    title: 'National Family Services & Client Websites',
-    preview: { type: 'image', src: nafsPreview, alt: 'National Family Services homepage preview' },
-    description:
-      'Rebuilt a payment processing system on custom PHP/WordPress, restoring functionality in 72 hours and preventing $50K+ in monthly revenue loss. Built responsive portfolio sites for 5+ clients, lifting lead conversion by 40%, with staged, automated deployment workflows.',
-    tags: ['WordPress', 'PHP', 'HTML/CSS'],
-    links: [
-      { href: 'https://www.nafsbenefits.com/', label: 'NAFS Benefits' },
-      { href: 'https://nationalfamilyservices.com/', label: 'National Family Services' },
-    ],
   },
 ];
 
