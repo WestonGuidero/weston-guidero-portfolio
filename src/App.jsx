@@ -156,8 +156,9 @@ function App() {
             </h1>
             <p className="hero-subtitle">
               I'm an IT, systems administration, and cybersecurity
-              professional — 4+ years running and securing enterprise
-              networks, now pursuing a Master's in Cybersecurity at Western
+              professional with a software engineering background — 4+ years
+              running and securing enterprise networks, now pursuing a
+              Master's in Cybersecurity at Western
               Governors University. I've also built scalable systems and
               web applications, leaning increasingly into DevOps: CI/CD
               pipelines, cloud infrastructure, and automated deployments.
