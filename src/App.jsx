@@ -163,11 +163,14 @@ function App() {
               Hi, I'm <span className="accent-text">Weston Guidero</span>
             </h1>
             <p className="hero-subtitle">
-              I build scalable web applications and payment systems, and I come
-              up through enterprise networking, structured cabling, and AV/IT
-              systems integration. Currently studying Cybersecurity at Western
-              Governors University. 4+ years turning ideas into shipped
-              products — on the code side and the network side.
+              I build scalable web applications and payment systems, backed by
+              hands-on enterprise networking and systems administration
+              experience — 4+ years turning ideas into shipped products. Now
+              pursuing a Master's in Cybersecurity at Western Governors
+              University. That technical drive traces back to a B.A. in Music
+              Production and Contemporary Writing from Berklee College of
+              Music, and a lifelong passion for guitar and audio engineering
+              that still shapes how I approach building and securing systems.
             </p>
             <div className="hero-actions">
               <a href="#projects" className="btn-gradient">View My Work</a>
@@ -229,13 +232,13 @@ function App() {
           <div className="row align-items-center g-4">
             <div className="col-md-8 about-text">
               <p>
-                My background spans both sides of the stack most people keep separate: I run my own low-voltage, IT, and AV services company — structured cabling, network infrastructure, and systems administration — and I build full-stack web applications and payment systems on top of React, Node.js, Python, and PHP.
+                My background spans both sides of the stack most people keep separate: I run my own IT services company focused on enterprise networking and systems administration, and I build full-stack web applications and payment systems on top of React, Node.js, Python, and PHP.
               </p>
               <p>
-                I have a proven track record of delivering critical fixes under pressure and creating custom solutions for diverse clients, and I'm currently studying Cybersecurity at Western Governors University to formalize that hands-on IT and networking experience.
+                I have a proven track record of delivering critical fixes under pressure and creating custom solutions for diverse clients, and I'm currently pursuing a Master's in Cybersecurity at Western Governors University to formalize that hands-on IT and networking experience.
               </p>
               <p>
-                I also hold a B.A. in Music Production and Contemporary Writing from Berklee College of Music — a background that brings a different kind of problem-solving to how I build and secure systems.
+                I also hold a B.A. in Music Production and Contemporary Writing from Berklee College of Music, and I'm still an active guitarist and audio engineer outside of work — a background that brings a different kind of creative problem-solving to how I build and secure systems.
               </p>
             </div>
             <div className="col-md-4 d-flex justify-content-center">
