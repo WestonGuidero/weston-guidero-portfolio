@@ -56,7 +56,7 @@ const experience = [
     role: 'IT Consultant & Network Administrator',
     company: 'West Coast Systems LLC',
     location: 'Redondo Beach, CA',
-    dates: 'Jan 2026 – Jun 2026',
+    dates: 'Oct 2025 – Jun 2026',
     bullets: [
       'Served as on-site IT consultant for small-business clients, administering Windows Server environments, Active Directory user/group policies, and network shares alongside Microsoft 365 account provisioning.',
       'Designed, deployed, and administered enterprise-grade network infrastructure (Ubiquiti UniFi switching, access points, VLAN segmentation) supporting client business operations.',
@@ -68,7 +68,7 @@ const experience = [
     role: 'IT/AV & Smart Home Integration Technician',
     company: 'Namu Low Voltage / Signals Audio Video / RHI Integration',
     location: 'Southern California',
-    dates: 'Jan 2024 – Jul 2026',
+    dates: 'Jan 2024 – Sep 2025',
     bullets: [
       'Installed and commissioned AV and smart-home systems across 50+ residential properties.',
       'Ran and terminated Cat5e/Cat6 in new construction and retrofits (attic, crawl space, finished walls) with clean dress and labeling.',
