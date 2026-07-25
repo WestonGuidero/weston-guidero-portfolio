@@ -163,14 +163,16 @@ function App() {
               Hi, I'm <span className="accent-text">Weston Guidero</span>
             </h1>
             <p className="hero-subtitle">
-              I build scalable web applications and payment systems, backed by
-              hands-on enterprise networking and systems administration
-              experience — 4+ years turning ideas into shipped products. Now
-              pursuing a Master's in Cybersecurity at Western Governors
-              University. That technical drive traces back to a B.A. in Music
-              Production and Contemporary Writing from Berklee College of
-              Music, and a lifelong passion for guitar and audio engineering
-              that still shapes how I approach building and securing systems.
+              I'm an IT, systems administration, and cybersecurity
+              professional — 4+ years running and securing enterprise
+              networks, now pursuing a Master's in Cybersecurity at Western
+              Governors University. I've also built scalable systems and
+              web applications, leaning increasingly into DevOps: CI/CD
+              pipelines, cloud infrastructure, and automated deployments.
+              That technical drive traces back to a B.A. in Music Production
+              and Contemporary Writing from Berklee College of Music, and a
+              lifelong passion for guitar and audio engineering that still
+              shapes how I approach building and securing systems.
             </p>
             <div className="hero-actions">
               <a href="#projects" className="btn-gradient">View My Work</a>
