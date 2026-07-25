@@ -41,22 +41,34 @@ const skillGroups = [
 
 const experience = [
   {
-    role: 'Principal Low-Voltage & IT Systems Technician',
+    role: 'Active Directory / Systems Administrator (Contract)',
+    company: 'CHOC (Children\'s Hospital of Orange County)',
+    location: 'Orange, CA',
+    dates: 'Jul 2026 – Present',
+    bullets: [
+      'Manage Active Directory user and group accounts — provisioning, deprovisioning, and password resets for hospital staff.',
+      'Administer organizational unit structure and Group Policy Objects (GPOs) to enforce security and configuration standards across the domain.',
+      'Image and deploy workstations, joining devices to the domain and configuring endpoint settings per hospital IT policy.',
+      'Provide Tier 1/2 helpdesk support for hospital staff, resolving access, permissions, and account-related tickets tied to Active Directory.',
+    ],
+  },
+  {
+    role: 'IT Consultant & Network Administrator',
     company: 'West Coast Systems LLC',
     location: 'Redondo Beach, CA',
-    dates: 'Jan 2026 – Present',
+    dates: 'Jan 2026 – Jun 2026',
     bullets: [
-      'Design and install full Ubiquiti UniFi AV/network systems — access points, Cat6 drops, patch panels, keystone terminations — for residential and small commercial clients.',
-      'Engineer and cable 19" server racks end-to-end: switches, NVRs, PDUs, patch bays, with full cable management and labeling.',
-      'Wire and configure AV systems: ceiling speakers, wall-plate HDMI, display mounts, conference-room video distribution.',
-      'Produce as-built documentation and system guides for every install.',
+      'Served as on-site IT consultant for small-business clients, administering Windows Server environments, Active Directory user/group policies, and network shares alongside Microsoft 365 account provisioning.',
+      'Designed, deployed, and administered enterprise-grade network infrastructure (Ubiquiti UniFi switching, access points, VLAN segmentation) supporting client business operations.',
+      'Managed server rack builds and structured cabling for client sites, including hardware replacement, patch panel terminations, and troubleshooting of network connectivity issues.',
+      'Produced as-built documentation, network diagrams, and system runbooks to support ongoing client IT operations.',
     ],
   },
   {
     role: 'IT/AV & Smart Home Integration Technician',
     company: 'Namu Low Voltage / Signals Audio Video / RHI Integration',
     location: 'Southern California',
-    dates: 'Jan 2024 – Present',
+    dates: 'Jan 2024 – Jul 2026',
     bullets: [
       'Installed and commissioned AV and smart-home systems across 50+ residential properties.',
       'Ran and terminated Cat5e/Cat6 in new construction and retrofits (attic, crawl space, finished walls) with clean dress and labeling.',
