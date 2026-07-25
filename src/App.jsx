@@ -39,6 +39,93 @@ const skillGroups = [
   },
 ];
 
+const experience = [
+  {
+    role: 'Principal Low-Voltage & IT Systems Technician',
+    company: 'West Coast Systems LLC',
+    location: 'Redondo Beach, CA',
+    dates: 'Jan 2026 – Present',
+    bullets: [
+      'Design and install full Ubiquiti UniFi AV/network systems — access points, Cat6 drops, patch panels, keystone terminations — for residential and small commercial clients.',
+      'Engineer and cable 19" server racks end-to-end: switches, NVRs, PDUs, patch bays, with full cable management and labeling.',
+      'Wire and configure AV systems: ceiling speakers, wall-plate HDMI, display mounts, conference-room video distribution.',
+      'Produce as-built documentation and system guides for every install.',
+    ],
+  },
+  {
+    role: 'IT/AV & Smart Home Integration Technician',
+    company: 'Namu Low Voltage / Signals Audio Video / RHI Integration',
+    location: 'Southern California',
+    dates: 'Jan 2024 – Present',
+    bullets: [
+      'Installed and commissioned AV and smart-home systems across 50+ residential properties.',
+      'Ran and terminated Cat5e/Cat6 in new construction and retrofits (attic, crawl space, finished walls) with clean dress and labeling.',
+      'Mounted and cabled Ubiquiti access points, IP/PoE cameras, and NVR systems; configured SonicWall routers and client networks.',
+      'Troubleshot wiring with cable testers and tone generators.',
+    ],
+  },
+  {
+    role: 'IT & AV Technical Support Specialist',
+    company: 'AVS Solutions / Encore Global',
+    location: 'Southern California',
+    dates: 'Mar 2022 – Dec 2024',
+    bullets: [
+      'Managed network and A/V infrastructure across 10+ concurrent conference rooms, maintaining 99.9% uptime for C-level and keynote presentations.',
+      'Provided Tier 1/2 support for 100+ users per event across Windows and macOS, with 95%+ first-contact resolution.',
+      'Triaged time-critical failures and built an internal knowledge base of recurring issues to cut mean time to resolution.',
+      'Hardened Windows/macOS endpoints and enforced least-privilege access to presentation systems and executive content.',
+    ],
+  },
+];
+
+const certifications = [
+  {
+    icon: '🔒',
+    name: 'CompTIA Security+ CE',
+    meta: 'DoD 8570 IAT Level II',
+    dates: 'Issued Mar 2026 · Exp. Mar 2029',
+  },
+  {
+    icon: '☁️',
+    name: 'AWS Certified Cloud Practitioner',
+    meta: 'CLF-C02',
+    dates: 'Issued Mar 2025 · Exp. Mar 2028',
+  },
+  {
+    icon: '🎓',
+    name: 'Technical Support Fundamentals',
+    meta: 'Google / Coursera',
+    dates: 'Issued May 2023',
+  },
+];
+
+const infrastructureProjects = [
+  {
+    title: 'Virtualization & Container Orchestration',
+    description:
+      'Run a self-hosted infrastructure stack across Proxmox VE and Unraid — VM provisioning, Docker (10+ isolated containers with dedicated bridge networks and persistent volumes), and Kubernetes container orchestration across a multi-node cluster on Red Hat-based nodes.',
+    tags: ['Proxmox', 'Docker', 'Kubernetes', 'RHEL', 'Unraid'],
+  },
+  {
+    title: 'Networking & Segmentation',
+    description:
+      'Designed a segmented network on 10G backbone hardware (Mellanox ConnectX-3 SFP+, Ubiquiti UniFi switching) with VLANs isolating IoT, trusted, and management traffic, static IP allocation, and firewall access restrictions between segments.',
+    tags: ['VLAN Segmentation', '10G Networking', 'Ubiquiti UniFi', 'Firewall Rules'],
+  },
+  {
+    title: 'Remote Access, VPN & Reverse Proxy',
+    description:
+      'Built zero-trust remote access with a self-hosted WireGuard/Tailscale mesh VPN and a self-hosted RustDesk relay with no third-party cloud dependency, fronted by reverse proxies for routing self-hosted services securely.',
+    tags: ['WireGuard', 'Tailscale', 'Reverse Proxy', 'Zero Trust'],
+  },
+  {
+    title: 'Storage, Hosting & Monitoring',
+    description:
+      'Manage TrueNAS and Unraid storage nodes, a branded self-hosted mail server, and web hosting for client and personal sites, backed by a Wazuh SIEM stack with fail2ban/SSH hardening for centralized log aggregation and intrusion alerting. Infrastructure changes are version-controlled and repeatable via Terraform.',
+    tags: ['TrueNAS', 'Mail Server', 'Wazuh SIEM', 'Terraform'],
+  },
+];
+
 const projects = [
   {
     title: 'National Family Services & Client Websites',
@@ -64,8 +151,8 @@ const projects = [
     spotlight: true,
     preview: { type: 'image', src: westAudioPreview, alt: 'West-Audio.com homepage preview' },
     description:
-      "West Audio is an independent software and audio plugin company building tools for music producers, engineers, composers, and hobbyists. Its flagship product, AudioFork, is a fully released version-control platform for DAW projects — the GitHub/Git of the audio world — available as a one-time purchase with an optional SaaS subscription for cloud backup. I designed and built the site and manage the product's release and licensing.",
-    tags: ['AudioFork', 'SaaS', 'One-Time Purchase', 'Audio / DAW Tools'],
+      "West Audio is an independent software and audio plugin company building tools for music producers, engineers, composers, and hobbyists. Its flagship product, AudioFork, is a fully released version-control platform for DAW projects — the GitHub/Git of the audio world — available as a one-time purchase with an optional SaaS subscription for cloud backup. I designed and built the site, manage the product's release and licensing, and am currently developing a line of audio plugins for the West Audio product lineup.",
+    tags: ['AudioFork', 'SaaS', 'One-Time Purchase', 'Audio Plugins (In Development)'],
     link: { href: 'https://west-audio.com', label: 'View Project' },
   },
   {
@@ -137,9 +224,11 @@ function App() {
             Weston <span>Guidero</span>
           </a>
           <ul className="nav-links">
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#infrastructure">Infrastructure</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
             <li><button onClick={openModal}>Contact</button></li>
           </ul>
         </div>
@@ -187,6 +276,32 @@ function App() {
         </div>
       </section>
 
+      {/* Experience */}
+      <section id="experience" className="section section-tight">
+        <div className="container">
+          <span className="eyebrow">Experience</span>
+          <h2 className="section-heading">Where I've Worked</h2>
+          <div className="row g-4">
+            {experience.map((job) => (
+              <div className="col-12" key={job.role + job.company}>
+                <div className="surface-card experience-card">
+                  <div className="experience-head">
+                    <span className="experience-role">{job.role}</span>
+                    <span className="experience-dates">{job.dates}</span>
+                  </div>
+                  <div className="experience-company">{job.company} &middot; {job.location}</div>
+                  <ul className="experience-list">
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects — front and center */}
       <section id="projects" className="section">
         <div className="container">
@@ -226,6 +341,29 @@ function App() {
         </div>
       </section>
 
+      {/* Infrastructure Projects */}
+      <section id="infrastructure" className="section section-tight">
+        <div className="container">
+          <span className="eyebrow">Systems &amp; Infrastructure</span>
+          <h2 className="section-heading">Infrastructure Projects</h2>
+          <div className="row g-4">
+            {infrastructureProjects.map((item) => (
+              <div className="col-md-6 col-lg-3" key={item.title}>
+                <div className="surface-card infra-card">
+                  <h3>{item.title}</h3>
+                  <p className="infra-desc">{item.description}</p>
+                  <div className="project-tags">
+                    {item.tags.map((tag) => (
+                      <span className="tag" key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About */}
       <section id="about" className="section section-tight">
         <div className="container">
@@ -253,6 +391,20 @@ function App() {
       {/* Skills */}
       <section id="skills" className="section section-tight">
         <div className="container">
+          <span className="eyebrow">Certifications</span>
+          <h2 className="section-heading">Credentials</h2>
+          <div className="row g-3 mb-4">
+            {certifications.map((cert) => (
+              <div className="col-md-4" key={cert.name}>
+                <div className="surface-card cert-card">
+                  <div className="cert-icon">{cert.icon}</div>
+                  <div className="cert-name">{cert.name}</div>
+                  <div className="cert-meta">{cert.meta}</div>
+                  <div className="cert-dates">{cert.dates}</div>
+                </div>
+              </div>
+            ))}
+          </div>
           <span className="eyebrow">Skills</span>
           <h2 className="section-heading">Toolbox</h2>
           <div className="row g-3">
