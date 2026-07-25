@@ -149,32 +149,39 @@ function App() {
       <section id="hero" className="hero">
         <div className="hero-glow" />
         <div className="container">
-          <div className="hero-content">
-            <span className="eyebrow">Software Developer &middot; IT &amp; Network Systems</span>
-            <h1 className="hero-title">
-              Hi, I'm <span className="accent-text">Weston Guidero</span>
-            </h1>
-            <p className="hero-subtitle">
-              I'm an IT, systems administration, and cybersecurity
-              professional with a software engineering background — 4+ years
-              running and securing enterprise networks, now pursuing a
-              Master's in Cybersecurity at Western
-              Governors University. I've also built scalable systems and
-              web applications, leaning increasingly into DevOps: CI/CD
-              pipelines, cloud infrastructure, and automated deployments.
-              That technical drive traces back to a B.A. in Music Production
-              and Contemporary Writing from Berklee College of Music, and a
-              lifelong passion for guitar and audio engineering that still
-              shapes how I approach building and securing systems.
-            </p>
-            <div className="hero-actions">
-              <a href="#projects" className="btn-gradient">View My Work</a>
-              <button onClick={openModal} className="btn-outline">Get In Touch</button>
+          <div className="row align-items-center g-4">
+            <div className="col-lg-8">
+              <div className="hero-content">
+                <span className="eyebrow">Software Developer &middot; IT &amp; Network Systems</span>
+                <h1 className="hero-title">
+                  Hi, I'm <span className="accent-text">Weston Guidero</span>
+                </h1>
+                <p className="hero-subtitle">
+                  I'm an IT, systems administration, and cybersecurity
+                  professional with a software engineering background — 4+ years
+                  running and securing enterprise networks, now pursuing a
+                  Master's in Cybersecurity at Western
+                  Governors University. I've also built scalable systems and
+                  web applications, leaning increasingly into DevOps: CI/CD
+                  pipelines, cloud infrastructure, and automated deployments.
+                  That technical drive traces back to a B.A. in Music Production
+                  and Contemporary Writing from Berklee College of Music, and a
+                  lifelong passion for guitar and audio engineering that still
+                  shapes how I approach building and securing systems.
+                </p>
+                <div className="hero-actions">
+                  <a href="#projects" className="btn-gradient">View My Work</a>
+                  <button onClick={openModal} className="btn-outline">Get In Touch</button>
+                </div>
+                <div className="hero-stack">
+                  {['React', 'Node.js', 'Networking', 'Linux', 'Cybersecurity'].map((s) => (
+                    <span key={s} className="chip">{s}</span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="hero-stack">
-              {['React', 'Node.js', 'Networking', 'Linux', 'Cybersecurity'].map((s) => (
-                <span key={s} className="chip">{s}</span>
-              ))}
+            <div className="col-lg-4 d-flex justify-content-center justify-content-lg-end">
+              <img src={profileImage} alt="Weston Guidero" className="hero-photo" />
             </div>
           </div>
         </div>
