@@ -1,44 +1,43 @@
-.hover-lift {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.hover-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.18) !important;
-  z-index: 20;
-}
-
-.site-preview {
-  position: relative;
-  display: block;
-  border-radius: 0.5rem 0.5rem 0 0;
-  overflow: hidden;
-}
-.site-preview img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.site-preview:hover img {
-  transform: scale(1.08);
+:root {
+  --bg: #0a0e17;
+  --bg-elevated: #10151f;
+  --bg-elevated-2: #161c29;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #eef1f6;
+  --text-muted: #9aa4b8;
+  --text-faint: #6b7385;
+  --accent: #5b8cff;
+  --accent-2: #a35bff;
+  --gradient: linear-gradient(120deg, #5b8cff, #a35bff);
+  color-scheme: dark;
 }
 
-.site-preview-placeholder {
-  height: 170px;
-  border-radius: 0.5rem 0.5rem 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: filter 0.2s ease;
+* {
+  box-sizing: border-box;
 }
-.site-preview-placeholder:hover {
-  filter: brightness(1.15);
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
 }

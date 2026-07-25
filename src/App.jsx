@@ -1,15 +1,131 @@
 import React, { useState } from 'react';
 import profileImage from './assets/images/photo_of_me.jpg';
-import githubIcon from './assets/images/github.svg'; // Import the GitHub SVG
-import linkedinIcon from './assets/images/linkedin.svg'; // Import the LinkedIn SVG
+import githubIcon from './assets/images/github.svg';
+import linkedinIcon from './assets/images/linkedin.svg';
 import westAudioPreview from './assets/images/previews/west-audio.jpg';
 import techwesPreview from './assets/images/previews/techwes-store.jpg';
 import westCoastPreview from './assets/images/previews/westcoastsystems.jpg';
 import guideroDesignPreview from './assets/images/previews/guiderodesign.jpg';
 import nafsPreview from './assets/images/previews/nationalfamilyservices.jpg';
+import './App.css';
 
+const skillGroups = [
+  {
+    title: 'IT & Networking',
+    skills: [
+      'Enterprise Networking', 'Structured Cabling', 'Network Infrastructure',
+      'Low-Voltage / AV Systems', 'Linux Administration', 'Windows Administration',
+      'Mail Server Administration', 'Zoho CRM', 'Cybersecurity (WGU, in progress)',
+    ],
+  },
+  {
+    title: 'Languages',
+    skills: ['JavaScript', 'TypeScript', 'Python', 'PHP', 'Java', 'HTML/CSS', 'SQL'],
+  },
+  {
+    title: 'Frontend & Frameworks',
+    skills: ['React', 'Bootstrap CSS', 'jQuery', 'Figma'],
+  },
+  {
+    title: 'Backend & Runtimes',
+    skills: ['Node.js', 'Express.js', 'RESTful APIs'],
+  },
+  {
+    title: 'Cloud, Databases & Tools',
+    skills: [
+      'AWS (EC2, S3, Lambda)', 'Azure', 'Docker', 'Git', 'Firebase', 'MongoDB',
+      'MySQL', 'Postgres', 'Supabase', 'Vercel', 'Netlify', 'WordPress', 'Webpack',
+    ],
+  },
+];
 
-// Main App component
+const projects = [
+  {
+    title: 'West-Audio.com',
+    spotlight: true,
+    preview: { type: 'image', src: westAudioPreview, alt: 'West-Audio.com homepage preview' },
+    description:
+      "West Audio is an independent software and audio plugin company building tools for music producers, engineers, composers, and hobbyists. Its flagship product, AudioFork, is a fully released version-control platform for DAW projects — the GitHub/Git of the audio world — available as a one-time purchase with an optional SaaS subscription for cloud backup. I designed and built the site and manage the product's release and licensing.",
+    tags: ['AudioFork', 'SaaS', 'One-Time Purchase', 'Audio / DAW Tools'],
+    link: { href: 'https://west-audio.com', label: 'View Project' },
+  },
+  {
+    title: 'Electronics Modding & Repair E-Commerce',
+    spotlight: true,
+    preview: { type: 'image', src: techwesPreview, alt: 'TechWes Store homepage preview' },
+    description:
+      "TechWes Store offers professional console modding and repair services — micro-soldering, firmware flashing, LCD replacements — building on repair work I started doing at age 15. I built the full-stack e-commerce site on Next.js and deployed it through Vercel's GitHub-connected CI/CD pipeline, integrating Stripe's token-authenticated payment API for checkout and subscriptions, Supabase for the backend database, and the Resend API for automated order and marketing emails.",
+    tags: ['Next.js', 'Stripe', 'Supabase', 'Resend'],
+    link: { href: 'https://techwes.store/', label: 'View Project' },
+  },
+  {
+    title: 'West Coast Systems',
+    spotlight: true,
+    preview: { type: 'image', src: westCoastPreview, alt: 'West Coast Systems homepage preview' },
+    description:
+      'West Coast Systems provides low-voltage, IT, and AV services — structured cabling, network infrastructure, AV installs, and smart-home systems. I built the business website from the ground up and backed it with a branded mail server and a Zoho CRM integration for lead and pipeline management.',
+    tags: ['Low Voltage / AV', 'Mail Server', 'Zoho CRM', 'IT Services'],
+    link: { href: 'https://westcoastsystems.tech', label: 'View Project' },
+  },
+  {
+    title: 'Architecture Firm Website',
+    preview: { type: 'image', src: guideroDesignPreview, alt: 'Guidero Design homepage preview' },
+    description:
+      'Designed and built an architecture firm website from scratch using React, JSX, and Bootstrap CSS.',
+    tags: ['React', 'Bootstrap CSS'],
+    link: { href: 'https://guiderodesign.com', label: 'View Project' },
+  },
+  {
+    title: 'AI Chatbot',
+    preview: { type: 'emoji', emoji: '🤖', gradient: 'linear-gradient(135deg, #1a1a1a, #343a40)' },
+    description:
+      'A self-hosted AI chatbot powered by Ollama for local, private large language model inference, with a custom web front end for real-time conversation.',
+    tags: ['Ollama', 'Self-Hosted', 'LLM'],
+    link: { href: 'https://wesollama.duckdns.org/', label: 'View Project' },
+  },
+  {
+    title: 'IMDB Movie Database App',
+    preview: { type: 'emoji', emoji: '🎬', gradient: 'linear-gradient(135deg, #e83e8c, #20c997)' },
+    description:
+      'A movie database app with REST API integration, full CRUD operations, and Bootstrap CSS styling.',
+    tags: ['REST API', 'CRUD', 'Bootstrap CSS'],
+    link: { href: 'https://github.com/WestonGuidero/IMDB-Movie-Database-API-App', label: 'View Project' },
+  },
+  {
+    title: 'National Family Services & Client Websites',
+    preview: { type: 'image', src: nafsPreview, alt: 'National Family Services homepage preview' },
+    description:
+      'Rebuilt a payment processing system on custom PHP/WordPress, restoring functionality in 72 hours and preventing $50K+ in monthly revenue loss. Built responsive portfolio sites for 5+ clients, lifting lead conversion by 40%, with staged, automated deployment workflows.',
+    tags: ['WordPress', 'PHP', 'HTML/CSS'],
+    links: [
+      { href: 'https://www.nafsbenefits.com/', label: 'NAFS Benefits' },
+      { href: 'https://nationalfamilyservices.com/', label: 'National Family Services' },
+    ],
+  },
+];
+
+function ProjectPreview({ project }) {
+  const href = project.link ? project.link.href : project.links[0].href;
+  if (project.preview.type === 'image') {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="project-preview">
+        <img src={project.preview.src} alt={project.preview.alt} />
+      </a>
+    );
+  }
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="project-preview project-preview-emoji"
+      style={{ background: project.preview.gradient }}
+    >
+      {project.preview.emoji}
+    </a>
+  );
+}
+
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [formStatus, setFormStatus] = useState('');
@@ -21,454 +137,154 @@ function App() {
   };
 
   return (
-    <div className="bg-light min-vh-100 d-flex flex-column" style={{ fontFamily: 'Inter, sans-serif' }}>
-      {/* Bootstrap CDN links - These MUST be placed in your project's root index.html file */}
-      {/* For demonstration purposes, conceptually imagine these are linked in index.html:
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-      */}
-
-      {/* Hero Section - Now includes integrated navigation */}
-      <section id="hero" className="text-white py-5 py-md-5 text-center d-flex align-items-center justify-content-center flex-grow-1 position-relative"
-        style={{
-          background: 'linear-gradient(45deg, #007bff, #6f42c1)', // Subtle gradient for pop
-          minHeight: '70vh', // Make it a bit taller
-          borderRadius: '0 0 50% 50% / 0 0 10% 10%', // Rounded bottom edge
-          marginBottom: '5rem', // Add space below hero
-          boxShadow: '0 10px 20px rgba(0,0,0,0.2)', // Subtle shadow
-          paddingTop: '80px' // Add padding to push content down from the transparent header
-        }}>
-        {/* Integrated Navigation Links */}
-        <nav className="position-absolute top-0 start-0 end-0 py-3" style={{ zIndex: 1000 }}>
-          <div className="container d-flex justify-content-end">
-            <ul className="list-unstyled d-flex mb-0">
-              <li className="nav-item me-4">
-                <a className="text-white text-decoration-none fw-semibold" href="#about">About</a>
-              </li>
-              <li className="nav-item me-4">
-                <a className="text-white text-decoration-none fw-semibold" href="#skills">Skills</a>
-              </li>
-              <li className="nav-item me-4">
-                <a className="text-white text-decoration-none fw-semibold" href="#projects">Projects</a>
-              </li>
-              <li className="nav-item">
-                <button onClick={openModal} className="text-white text-decoration-none fw-semibold bg-transparent border-0" style={{ cursor: 'pointer' }}>Contact</button>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <div className="container my-5">
-          <h1 className="display-3 fw-bold mb-4 animate__animated animate__fadeInDown"> {/* Add animation class if you include Animate.css */}
-            Hi, I'm Weston Guidero
-          </h1>
-          <p className="fs-4 mb-5 animate__animated animate__fadeInUp"> {/* Add animation class */}
-            Full-stack developer with 4+ years of experience building scalable web applications.
-          </p>
-          <a
-            href="#projects"
-            className="btn btn-light btn-lg rounded-pill shadow-lg px-5 py-3 fw-bold text-primary animate__animated animate__zoomIn" // Add animation class
-          >
-            View My Work
+    <div className="page">
+      {/* Nav */}
+      <header className="navbar-glass">
+        <div className="container nav-inner">
+          <a href="#hero" className="brand">
+            Weston <span>Guidero</span>
           </a>
+          <ul className="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><button onClick={openModal}>Contact</button></li>
+          </ul>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="hero" className="hero">
+        <div className="hero-glow" />
+        <div className="container">
+          <div className="hero-content">
+            <span className="eyebrow">Software Developer &middot; IT &amp; Network Systems</span>
+            <h1 className="hero-title">
+              Hi, I'm <span className="accent-text">Weston Guidero</span>
+            </h1>
+            <p className="hero-subtitle">
+              I build scalable web applications and payment systems, and I come
+              up through enterprise networking, structured cabling, and AV/IT
+              systems integration. Currently studying Cybersecurity at Western
+              Governors University. 4+ years turning ideas into shipped
+              products — on the code side and the network side.
+            </p>
+            <div className="hero-actions">
+              <a href="#projects" className="btn-gradient">View My Work</a>
+              <button onClick={openModal} className="btn-outline">Get In Touch</button>
+            </div>
+            <div className="hero-stack">
+              {['React', 'Node.js', 'Networking', 'Linux', 'Cybersecurity'].map((s) => (
+                <span key={s} className="chip">{s}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-5 py-md-5 bg-white">
-        <div className="container my-5">
-          <h2 className="display-4 fw-bold text-center text-dark mb-5">About Me</h2>
-          <div className="row align-items-center">
-            <div className="col-md-7 text-secondary fs-5">
-              <p className="mb-4">
-                As a full-stack developer with over 4 years of experience, I specialize in building scalable web applications and robust payment systems. My expertise spans both frontend design and complex backend architectures, with a strong foundation in React, Node.js, Python, and PHP.
-              </p>
-              <p className="mb-4">
-                I have a proven track record of delivering critical fixes under pressure and creating custom solutions for diverse clients. My background also includes enterprise networking and AV systems integration, providing a unique blend of technical skills.
+      {/* Projects — front and center */}
+      <section id="projects" className="section">
+        <div className="container">
+          <span className="eyebrow">Projects</span>
+          <h2 className="section-heading">Things I've Built</h2>
+          <div className="row g-4">
+            {projects.map((project) => (
+              <div className="col-md-6 col-lg-4" key={project.title}>
+                <div className={`surface-card project-card${project.spotlight ? ' spotlight' : ''}`}>
+                  <ProjectPreview project={project} />
+                  <div className="project-body">
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-desc">{project.description}</p>
+                    <div className="project-tags">
+                      {project.tags.map((tag) => (
+                        <span className="tag" key={tag}>{tag}</span>
+                      ))}
+                    </div>
+                    {project.links ? (
+                      <div className="project-link-row">
+                        {project.links.map((l) => (
+                          <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+                            {l.label} &rarr;
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      <a href={project.link.href} target="_blank" rel="noopener noreferrer" className="project-link">
+                        {project.link.label} &rarr;
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="section section-tight">
+        <div className="container">
+          <span className="eyebrow">About</span>
+          <h2 className="section-heading">A Bit About Me</h2>
+          <div className="row align-items-center g-4">
+            <div className="col-md-8 about-text">
+              <p>
+                My background spans both sides of the stack most people keep separate: I run my own low-voltage, IT, and AV services company — structured cabling, network infrastructure, and systems administration — and I build full-stack web applications and payment systems on top of React, Node.js, Python, and PHP.
               </p>
               <p>
-                I am currently pursuing a Master's Degree in Software Engineering, DevOps Engineering at Western Governors University.
+                I have a proven track record of delivering critical fixes under pressure and creating custom solutions for diverse clients, and I'm currently studying Cybersecurity at Western Governors University to formalize that hands-on IT and networking experience.
+              </p>
+              <p>
+                I also hold a B.A. in Music Production and Contemporary Writing from Berklee College of Music — a background that brings a different kind of problem-solving to how I build and secure systems.
               </p>
             </div>
-            <div className="col-md-5 d-flex justify-content-center mt-4 mt-md-0">
-              {/* Profile image usage - Corrected src to use the imported variable */}
-              <img
-                src={profileImage} // Using the imported profileImage variable directly
-                alt="Weston Guidero Profile"
-                className="img-fluid rounded-circle shadow-lg" // Bootstrap classes for responsive, rounded image with shadow
-                style={{ width: '250px', height: '250px', objectFit: 'cover', transition: 'transform 0.3s ease-in-out' }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-              />
+            <div className="col-md-4 d-flex justify-content-center">
+              <img src={profileImage} alt="Weston Guidero" className="about-photo" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-5 py-md-5 bg-light">
-        <div className="container my-5">
-          <h2 className="display-4 fw-bold text-center text-dark mb-5">Skills</h2>
-          <div className="row g-4">
-            {/* Programming Languages */}
-            <div className="col-lg-4 col-md-6">
-              <div className="card h-100 shadow-sm rounded-3 hover-lift"> {/* Added hover-lift class */}
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Programming Languages</h3>
-                  <ul className="list-unstyled text-secondary fs-5">
-                    <li>JavaScript</li>
-                    <li>TypeScript</li>
-                    <li>Python</li>
-                    <li>PHP</li>
-                    <li>Java</li>
-                    <li>HTML/CSS</li>
-                    <li>SQL</li>
-                  </ul>
+      {/* Skills */}
+      <section id="skills" className="section section-tight">
+        <div className="container">
+          <span className="eyebrow">Skills</span>
+          <h2 className="section-heading">Toolbox</h2>
+          <div className="row g-3">
+            {skillGroups.map((group) => (
+              <div className="col-md-6 col-lg-4" key={group.title}>
+                <div className="surface-card skill-card">
+                  <h3>{group.title}</h3>
+                  <div className="skill-chips">
+                    {group.skills.map((skill) => (
+                      <span className="chip" key={skill}>{skill}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* Frontend & Frameworks */}
-            <div className="col-lg-4 col-md-6">
-              <div className="card h-100 shadow-sm rounded-3 hover-lift">
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Frontend & Frameworks</h3>
-                  <ul className="list-unstyled text-secondary fs-5">
-                    <li>React</li>
-                    <li>Bootstrap CSS</li>
-                    <li>jQuery</li>
-                    <li>Figma</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            {/* Backend & Runtimes */}
-            <div className="col-lg-4 col-md-6">
-              <div className="card h-100 shadow-sm rounded-3 hover-lift">
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Backend & Runtimes</h3>
-                  <ul className="list-unstyled text-secondary fs-5">
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>RESTful APIs</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            {/* Cloud, Databases & Tools */}
-            <div className="col-lg-4 col-md-6">
-              <div className="card h-100 shadow-sm rounded-3 hover-lift">
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Cloud, Databases & Tools</h3>
-                  <ul className="list-unstyled text-secondary fs-5">
-                    <li>AWS (EC2, S3, Lambda)</li>
-                    <li>Azure</li>
-                    <li>Docker</li>
-                    <li>Git</li>
-                    <li>Firebase</li>
-                    <li>MongoDB</li>
-                    <li>MySQL</li>
-                    <li>Postgres</li>
-                    <li>Supabase</li>
-                    <li>Vercel</li>
-                    <li>Netlify</li>
-                    <li>WordPress</li>
-                    <li>Webpack</li>
-                    <li>Linux</li>
-                    <li>Audio/AV Systems</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-5 py-md-5 bg-white">
-        <div className="container my-5">
-          <h2 className="display-4 fw-bold text-center text-dark mb-5">My Projects</h2>
-          <div className="row g-4">
-            {/* Project Card: West-Audio.com */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <a href="https://west-audio.com" target="_blank" rel="noopener noreferrer" className="site-preview">
-                  <img src={westAudioPreview} alt="West-Audio.com homepage preview" />
-                </a>
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West-Audio.com</h3>
-                  <p className="card-text text-secondary mb-4">
-                    West Audio is an independent software and audio plugin company building tools for music producers, engineers, composers, and hobbyists. Its flagship product, AudioFork, is a fully released version-control platform for DAW projects &mdash; the GitHub/Git of the audio world &mdash; available as a one-time purchase with an optional SaaS subscription for cloud backup. I designed and built the site and manage the product's release and licensing.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>AudioFork</span>
-                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">SaaS</span>
-                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#20c997'}}>One-Time Purchase</span>
-                    <span className="badge bg-secondary rounded-pill px-3 py-2 text-white">Audio / DAW Tools</span>
-                  </div>
-                  <a
-                    href="https://west-audio.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card 1: Electronics Modding & Repair E-Commerce */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <a href="https://techwes.store/" target="_blank" rel="noopener noreferrer" className="site-preview">
-                  <img src={techwesPreview} alt="TechWes Store homepage preview" />
-                </a>
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Electronics Modding & Repair E-Commerce</h3>
-                  <p className="card-text text-secondary mb-4">
-                    TechWes Store offers professional console modding and repair services &mdash; micro-soldering, firmware flashing, LCD replacements &mdash; building on repair work I started doing at age 15. I built the full-stack e-commerce site on Next.js and deployed it through Vercel's GitHub-connected CI/CD pipeline, integrating Stripe's token-authenticated payment API for checkout and subscriptions, Supabase for the backend database, and the Resend API for automated order and marketing emails.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Next.js</span>
-                    <span className="badge bg-purple rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>Stripe</span>
-                    <span className="badge bg-success rounded-pill px-3 py-2 text-white">Supabase</span>
-                    <span className="badge bg-info rounded-pill px-3 py-2 text-white">Resend</span>
-                  </div>
-                  <a
-                    href="https://techwes.store/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card: West Coast Systems */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <a href="https://westcoastsystems.tech" target="_blank" rel="noopener noreferrer" className="site-preview">
-                  <img src={westCoastPreview} alt="West Coast Systems homepage preview" />
-                </a>
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">West Coast Systems</h3>
-                  <p className="card-text text-secondary mb-4">
-                    West Coast Systems provides low-voltage, IT, and AV services &mdash; structured cabling, network infrastructure, AV installs, and smart-home systems. I built the business website from the ground up and backed it with a branded mail server and a Zoho CRM integration for lead and pipeline management.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e65c00'}}>Low Voltage / AV</span>
-                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#1a73e8'}}>Mail Server</span>
-                    <span className="badge rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e42527'}}>Zoho CRM</span>
-                    <span className="badge bg-secondary rounded-pill px-3 py-2 text-white">IT Services</span>
-                  </div>
-                  <a
-                    href="https://westcoastsystems.tech"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card 2: Architecture Firm Website (React) */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <a href="https://guiderodesign.com" target="_blank" rel="noopener noreferrer" className="site-preview">
-                  <img src={guideroDesignPreview} alt="Guidero Design homepage preview" />
-                </a>
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Architecture Firm Website</h3>
-                  <p className="card-text text-secondary mb-4">
-                    Designed and created an architecture firm website from scratch using React, JSX, JavaScript, and Bootstrap CSS.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-cyan rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#17a2b8'}}>React</span> {/* Custom color for cyan-like */}
-                    <span className="badge bg-primary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
-                  </div>
-                  <a
-                    href="https://guiderodesign.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card 3: AI Chatbot */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
-                <a
-                  href="https://wesollama.duckdns.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="site-preview-placeholder text-white"
-                  style={{ background: 'linear-gradient(135deg, #1a1a1a, #343a40)' }}
-                >
-                  🤖
-                </a>
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">AI Chatbot</h3>
-                  <p className="card-text text-secondary mb-4">
-                    A self-hosted AI chatbot powered by Ollama for local, private large language model inference, with a custom web front end for real-time conversation.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-dark rounded-pill px-3 py-2 text-white">Ollama</span>
-                    <span className="badge bg-success rounded-pill px-3 py-2 text-white">Self-Hosted</span>
-                    <span className="badge bg-info rounded-pill px-3 py-2 text-white">LLM</span>
-                  </div>
-                  <a
-                    href="https://wesollama.duckdns.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card 4: IMDB Movie Database App */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
-                <a
-                  href="https://github.com/WestonGuidero/IMDB-Movie-Database-API-App"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="site-preview-placeholder text-white"
-                  style={{ background: 'linear-gradient(135deg, #e83e8c, #20c997)' }}
-                >
-                  🎬
-                </a>
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">IMDB Movie Database App</h3>
-                  <p className="card-text text-secondary mb-4">
-                    An IMDB movie database application with REST API integration, CRUD operations, and Bootstrap CSS styling.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-pink rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#e83e8c'}}>REST API</span> {/* Custom color for pink-like */}
-                    <span className="badge bg-teal rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#20c997'}}>CRUD</span> {/* Custom color for teal-like */}
-                    <span className="badge bg-secondary rounded-pill px-3 py-2 text-white">Bootstrap CSS</span>
-                  </div>
-                  <a
-                    href="https://github.com/WestonGuidero/IMDB-Movie-Database-API-App"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-link text-decoration-none fw-semibold"
-                  >
-                    View Project &rarr;
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Client Portfolio Websites - NAFS & Freelance */}
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 hover-lift">
-                <a href="https://nationalfamilyservices.com/" target="_blank" rel="noopener noreferrer" className="site-preview">
-                  <img src={nafsPreview} alt="National Family Services homepage preview" />
-                </a>
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">National Family Services & Client Websites</h3>
-                  <p className="card-text text-secondary mb-4">
-                    Rebuilt payment processing system using custom PHP/WordPress, restoring functionality within 72 hours and preventing $50K+ monthly revenue loss. Developed responsive portfolio websites for 5+ clients, increasing lead conversion by 40%. Architected staging environments with automated deployment workflows.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-orange rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#fd7e14'}}>WordPress</span>
-                    <span className="badge bg-danger rounded-pill px-3 py-2 text-white">PHP</span>
-                    <span className="badge bg-indigo rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6610f2'}}>HTML/CSS</span>
-                  </div>
-                  <div className="d-flex gap-2">
-                    <a
-                      href="https://www.nafsbenefits.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-link text-decoration-none fw-semibold p-0"
-                    >
-                      NAFS Benefits &rarr;
-                    </a>
-                    <span className="text-secondary">|</span>
-                    <a
-                      href="https://nationalfamilyservices.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-link text-decoration-none fw-semibold p-0"
-                    >
-                      National Family Services &rarr;
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-
-                        {/* Project Card 5: Vehicle Services App */}
-            {/* <div className="col-md-6 col-lg-4">
-              <div className="card h-100 shadow-lg rounded-3 overflow-hidden hover-lift">
-                <div className="card-body p-4">
-                  <h3 className="card-title fs-3 fw-semibold text-dark mb-3">Vehicle Services App</h3>
-                  <p className="card-text text-secondary mb-4">
-                    An iOS platform for on-demand car logistics & relocation with GPS tracking, developed using Swift and SwiftUI.
-                  </p>
-                  <div className="d-flex flex-wrap gap-2 mb-4">
-                    <span className="badge bg-danger rounded-pill px-3 py-2 text-white">Swift</span>
-                    <span className="badge bg-purple rounded-pill px-3 py-2 text-white" style={{backgroundColor: '#6f42c1'}}>SwiftUI</span>
-                    <span className="badge bg-warning rounded-pill px-3 py-2 text-white">Firebase</span>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-5 py-md-5 bg-light">
-        <div className="container my-5 text-center">
-          <h2 className="display-4 fw-bold text-dark mb-4">Get In Touch</h2>
-          <p className="fs-5 text-secondary mb-4">
-            I'm always open to new opportunities and collaborations. Feel free to reach out!
+      {/* Contact */}
+      <section id="contact" className="section section-tight contact-section">
+        <div className="container">
+          <span className="eyebrow">Contact</span>
+          <h2 className="section-heading">Let's Work Together</h2>
+          <p style={{ color: 'var(--text-muted)', maxWidth: 520, margin: '0 auto 2rem' }}>
+            I'm always open to new opportunities and collaborations. Feel free to reach out.
           </p>
-          <div className="d-flex flex-column align-items-center mb-4">
-            <button
-              onClick={openModal}
-              className="btn btn-primary btn-lg rounded-pill shadow-lg px-5 py-3 fw-bold text-white mb-3"
-            >
-              Email Me
-            </button>
-            <div className="d-flex justify-content-center gap-4 mt-3">
-              <a
-                href="https://github.com/WestonGuidero"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-light rounded-circle shadow-sm p-3 d-flex align-items-center justify-content-center" /* Added Bootstrap classes for button-like appearance */
-                style={{ color: '#333', width: '56px', height: '56px' }} /* Set specific color and fixed size */
-              >
-                {/* GitHub Icon - Using imported SVG as an <img> tag */}
-                <img src={githubIcon} alt="GitHub" style={{ width: '32px', height: '32px' }} />
-              </a>
-              <a
-                href="https://linkedin.com/in/weston-guidero"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-light rounded-circle shadow-sm p-3 d-flex align-items-center justify-content-center" /* Added Bootstrap classes for button-like appearance */
-                style={{ color: '#0A66C2', width: '56px', height: '56px' }} /* Set specific color and fixed size */
-              >
-                {/* LinkedIn Icon - Using imported SVG as an <img> tag */}
-                <img src={linkedinIcon} alt="LinkedIn" style={{ width: '32px', height: '32px' }} />
-              </a>
-            </div>
+          <button onClick={openModal} className="btn-gradient" style={{ marginBottom: '2rem' }}>
+            Email Me
+          </button>
+          <div className="d-flex justify-content-center gap-3">
+            <a href="https://github.com/WestonGuidero" target="_blank" rel="noopener noreferrer" className="social-btn">
+              <img src={githubIcon} alt="GitHub" className="icon-mono" />
+            </a>
+            <a href="https://linkedin.com/in/weston-guidero" target="_blank" rel="noopener noreferrer" className="social-btn">
+              <img src={linkedinIcon} alt="LinkedIn" />
+            </a>
           </div>
         </div>
       </section>
@@ -476,128 +292,55 @@ function App() {
       {/* Contact Form Modal */}
       {showModal && (
         <>
-          {/* Backdrop with blur effect */}
-          <div
-            onClick={closeModal}
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              backdropFilter: 'blur(8px)',
-              zIndex: 1040,
-            }}
-          />
+          <div onClick={closeModal} className="modal-backdrop-custom" />
+          <div className="modal-panel">
+            <div className="d-flex justify-content-between align-items-center mb-4">
+              <h2 className="fw-bold mb-0" style={{ color: 'var(--text)' }}>Get In Touch</h2>
+              <button onClick={closeModal} className="btn-close" aria-label="Close" />
+            </div>
 
-          {/* Modal */}
-          <div
-            style={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              zIndex: 1050,
-              width: '90%',
-              maxWidth: '600px',
-            }}
-          >
-            <div className="bg-white rounded-4 shadow-lg p-4 p-md-5">
-              <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2 className="fw-bold text-dark mb-0">Get In Touch</h2>
-                <button
-                  onClick={closeModal}
-                  className="btn-close"
-                  aria-label="Close"
-                />
+            <form
+              action="https://formspree.io/f/manvyede"
+              method="POST"
+              onSubmit={() => setFormStatus('sending')}
+            >
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label fw-semibold">Name</label>
+                <input type="text" className="form-control form-control-lg" id="name" name="name" required placeholder="Your name" />
               </div>
 
-              <form
-                action="https://formspree.io/f/manvyede"
-                method="POST"
-                onSubmit={() => setFormStatus('sending')}
-              >
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label fw-semibold">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control form-control-lg"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="Your name"
-                  />
-                </div>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label fw-semibold">Email</label>
+                <input type="email" className="form-control form-control-lg" id="email" name="email" required placeholder="your.email@example.com" />
+              </div>
 
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label fw-semibold">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control form-control-lg"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="your.email@example.com"
-                  />
-                </div>
+              <div className="mb-3">
+                <label htmlFor="subject" className="form-label fw-semibold">Subject</label>
+                <input type="text" className="form-control form-control-lg" id="subject" name="subject" required placeholder="What's this about?" />
+              </div>
 
-                <div className="mb-3">
-                  <label htmlFor="subject" className="form-label fw-semibold">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control form-control-lg"
-                    id="subject"
-                    name="subject"
-                    required
-                    placeholder="What's this about?"
-                  />
-                </div>
+              <div className="mb-4">
+                <label htmlFor="message" className="form-label fw-semibold">Message</label>
+                <textarea className="form-control form-control-lg" id="message" name="message" rows="5" required placeholder="Your message here..." />
+              </div>
 
-                <div className="mb-4">
-                  <label htmlFor="message" className="form-label fw-semibold">
-                    Message
-                  </label>
-                  <textarea
-                    className="form-control form-control-lg"
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                    placeholder="Your message here..."
-                  />
-                </div>
+              {formStatus === 'sending' && (
+                <div className="alert alert-info mb-3">Sending your message...</div>
+              )}
 
-                {formStatus === 'sending' && (
-                  <div className="alert alert-info mb-3">
-                    Sending your message...
-                  </div>
-                )}
-
-                <div className="d-grid gap-2">
-                  <button
-                    type="submit"
-                    className="btn btn-primary btn-lg fw-bold"
-                    disabled={formStatus === 'sending'}
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            </div>
+              <div className="d-grid gap-2">
+                <button type="submit" className="btn-gradient" disabled={formStatus === 'sending'} style={{ justifyContent: 'center' }}>
+                  Send Message
+                </button>
+              </div>
+            </form>
           </div>
         </>
       )}
 
       {/* Footer */}
-      <footer className="bg-dark text-white py-4 text-center">
-        <p>&copy; {new Date().getFullYear()} Weston Guidero. All rights reserved.</p>
+      <footer className="site-footer">
+        &copy; {new Date().getFullYear()} Weston Guidero. All rights reserved.
       </footer>
     </div>
   );
